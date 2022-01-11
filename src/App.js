@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App bg-white dark:bg-black">
 			<h1 className="text-xs font-bold underline dark:text-white">
-				Hello
+				Hello Exam !
 			</h1>
     </div>
   );
