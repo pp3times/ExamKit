@@ -1,13 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import { Navbar, Footer, Welcome } from './components';
 
 function App() {
   return (
-    <div className="App bg-white dark:bg-black">
-			<h1 className="text-xs font-bold underline dark:text-white">
-				Hello Exam !
-			</h1>
-    </div>
+		<div>
+			<Navbar />
+		</div>
   );
 }
 
