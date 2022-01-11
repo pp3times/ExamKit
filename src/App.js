@@ -1,12 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import SideBar from './components/sidebar';
 
 function App() {
   return (
-    <div className="App bg-white dark:bg-black">
-			<h1 className="text-xs font-bold underline dark:text-white">
-				Hello Exam !
-			</h1>
+    <div className='text-red-600'>
+      <SideBar />
     </div>
   );
 }
