@@ -3,7 +3,7 @@ import { Sidebar, Navbar } from './components';
 
 function App() {
   return (
-    <div className='text-red-600'>
+    <div>
 			<Navbar />
       <Sidebar />
     </div>
