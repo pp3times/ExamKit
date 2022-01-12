@@ -3,7 +3,7 @@ import SideBar from './components/sidebar';
 
 function App() {
   return (
-    <div className='text-red-600'>
+    <div>
       <SideBar />
     </div>
   );

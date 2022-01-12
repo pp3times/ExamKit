@@ -1,6 +1,7 @@
 import { Transition } from "@headlessui/react";
 import React from "react";
 import { useState } from "react";
+import BarBtn from './barBtn'
 
 const SideBar = () => {
   const sidebarStyle = {
@@ -48,18 +49,18 @@ const SideBar = () => {
           leaveTo="-translate-x-full"
         >
           <div
-            style={{
-              ...sidebarStyle,
-              // left: "-" + (isShow ? sidebarStyle.width : "0px"),
-            }}
+            className='text-white text-2xl'
+            style={sidebarStyle}
           >
-            {/* <button
-              onClick={() => {
-                isShow = !isShow;
-              }}
-            >
-              Show Sidebar
-            </button> */}
+            <div className="text-center py-10 font-bold">EXAMKIT</div>
+            <div className="px-3">
+              <BarBtn icon="i" text="CREATE QUIZ" active={true} />
+              <BarBtn icon="i" text="HOME" />
+              <BarBtn icon="i" text="COLLEGE YEARS" />
+              <BarBtn icon="i" text="HISTORY" />
+              <BarBtn icon="i" text="HOW TO USE" />
+              <BarBtn icon="i" text="SHORT NOTE" />
+            </div>
           </div>
         </Transition.Child>
       </Transition>
