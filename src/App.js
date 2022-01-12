@@ -1,11 +1,12 @@
 import './App.css';
-import { Navbar, Footer, Welcome } from './components';
+import { Sidebar, Navbar } from './components';
 
 function App() {
   return (
-		<div>
+    <div className='text-red-600'>
 			<Navbar />
-		</div>
+      <Sidebar />
+    </div>
   );
 }
 
