@@ -1,11 +1,10 @@
-import './App.css';
-import { Sidebar, Navbar } from './components';
+import "./App.css";
+import { Navbar } from "./components";
 
 function App() {
   return (
     <div>
-			<Navbar />
-      <Sidebar />
+      <Navbar />
     </div>
   );
 }

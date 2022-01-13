@@ -1,26 +1,22 @@
 import { Transition } from "@headlessui/react";
-import React from "react";
-import { useState } from "react";
-import BarBtn from './barBtn'
+import React, { useState, forwardRef, useImperativeHandle } from "react";
+import BarBtn from "./barBtn";
 
-const Sidebar = () => {
-  const sidebarStyle = {
-    height: "100%",
-    width: "278px",
-    position: "absolute",
-    background: "#333333",
-  };
-
+const Sidebar = forwardRef((props, ref) => {
   const [isShowing, setIsShowing] = useState(false);
 
+  useImperativeHandle(ref, () => ({
+    show() {
+      setIsShowing(!isShowing);
+    },
+  }));
+
   return (
-    <div>
-      <button
-        style={{ position: "absolute" }}
-        onClick={() => setIsShowing(true)}
-      >
-        Show
-      </button>
+    <div
+      className={`absolute w-full h-full top-0 ${
+        isShowing ? "" : "pointer-events-none"
+      }`}
+    >
       <Transition show={isShowing}>
         <Transition.Child
           enter="transition-opacity ease-linear duration-800"
@@ -31,14 +27,8 @@ const Sidebar = () => {
           leaveTo="opacity-0"
         >
           <div
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100vh",
-              background: "rgba(0, 0, 0, 0.7)",
-							top: "0"
-            }}
-            onClick={() => setIsShowing(false)}
+            className="absolute w-full h-screen bg-[#000000B3] top-0"
+            onClick={() => setIsShowing(!isShowing)}
           ></div>
         </Transition.Child>
         <Transition.Child
@@ -49,10 +39,7 @@ const Sidebar = () => {
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div
-            className='text-white text-2xl'
-            style={sidebarStyle}
-          >
+          <div className="text-white text-2xl h-full w-72 absolute bg-[#333333]">
             <div className="text-center py-10 font-bold">EXAMKIT</div>
             <div className="px-3">
               <BarBtn icon="i" text="CREATE QUIZ" active={true} />
@@ -67,6 +54,6 @@ const Sidebar = () => {
       </Transition>
     </div>
   );
-};
+});
 
 export default Sidebar;
