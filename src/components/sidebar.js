@@ -39,7 +39,7 @@ const Sidebar = forwardRef((props, ref) => {
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
         >
-          <div className="text-white text-2xl h-full w-72 absolute bg-[#333333]">
+          <div className="text-white text-2xl h-full w-full max-w-[278px] absolute bg-[#333333]">
             <div className="text-center py-10 font-bold">EXAMKIT</div>
             <div className="px-3">
               <BarBtn icon="i" text="CREATE QUIZ" active={true} />
